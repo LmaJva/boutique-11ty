@@ -5,8 +5,8 @@ name:
     fr: 茶壺 CháHú - Petite théière en terre brute
     en: 茶壺 CháHú - Small Teapot in Raw Clay
 mini_descr:
-    fr: Petite théière fabriquée par Je-le-Potier.
-    en: Small teapot made by Je-le-Potier.
+    fr: Petite théière fabriquée par Jé le potier
+    en: Small teapot made by Jé le potier
 tags: ['produit', 'je-le-potier']
 description: 
     fr: >
@@ -17,6 +17,7 @@ photos:
     - jerome_theiere_3-a.jpg
     - jerome_theiere_3-b.jpg
     - jerome_theiere_3-c.jpg
+    - jerome_theiere_3-d.jpg
 price: 132.00
 stock: 1
 weight: 230

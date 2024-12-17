@@ -10,14 +10,13 @@ mini_descr:
 tags: ['produit', 'mademoiselles-ceramique']
 description: 
     fr: >
-        茶壺 CháHú - théière 井蘭 - JǐngLán en 紅泥 - HóngNí (argile rouge) de Yixing, tournée à la main à Montpellier. Pièce unique.
+        茶壺 CháHú - théière 井欄 - JǐngLán en 紅泥 - HóngNí (argile rouge) de Yixing, tournée à la main à Montpellier. Pièce unique.
     en: >
-        茶壺 CháHú - teapot 井蘭 - JǐngLán in 紅泥 - HóngNí (red clay) from Yixing, hand-thrown in Montpellier. Unique piece.
+        茶壺 CháHú - teapot 井欄 - JǐngLán in 紅泥 - HóngNí (red clay) from Yixing, hand-thrown in Montpellier. Unique piece.
 photos:
     - melles-ceramique_theiere_1-a.jpg
     - melles-ceramique_theiere_1-b.jpg
     - melles-ceramique_theiere_1-c.jpg
-    - melles-ceramique_theiere_1-d.jpg
 price: 200.00
 stock: 1
 weight: 300
