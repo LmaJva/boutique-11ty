@@ -7,7 +7,7 @@ name:
 mini_descr:
     fr: thé vert traditionnel du Sichuan
     en: traditional green tea from Sichuan
-tags: ['produit', 'cha']
+tags: ['cha']
 description: 
     fr: >
         Ce 綠茶 - LǜChá est produit dans la province du 四川 - SìChuān en Chine et plus exactement au village de 白鹿村 - BáiLùCūn qui se trouve à environ 850 mètres d'altitude.<!--more--> Il ne couvre qu'une superficie de 5,8 kilomètres carrés et compte un peu plus de 1 300 habitants. Aucune industrie, son environnement est donc naturellement excellent et propice à la production agricole.
@@ -38,4 +38,5 @@ options:
         weight: 25g
 eleventyComputed:
     title: '{{ tags }} - {{ name[page.lang] }}'
+    permalink: "/products/{{ id }}_{{ name['fr'] | slugify }}/"
 ---

@@ -7,7 +7,7 @@ name:
 mini_descr:
     fr: porte-encens cascade réalisé par Perrine Pottiez
     en: waterfall incense holder made by Perrine Pottiez
-tags: ['produit', 'perrine-pottiez']
+tags: ['perrine-pottiez']
 description: 
     fr: >
         Porte-encens, 1250°C. Pièce unique. Pour encens en cascade et encens normal.

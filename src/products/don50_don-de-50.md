@@ -7,7 +7,7 @@ name:
 mini_descr:
     fr: Soutenez-nous avec un don de 50 €
     en: Support us with a 50 €
-tags: ['produit', 'dons']
+tags: ['dons']
 description: 
     fr: >
         Faire un don de 50 € et recevoir l'affiche du festival
@@ -20,4 +20,5 @@ stock: 30
 shipping_type: sans_envoi
 eleventyComputed:
     title: '{{ tags }} - {{ name[page.lang] }}'
+    permalink: "/products/{{ id }}_{{ name['fr'] | slugify }}/"
 ---

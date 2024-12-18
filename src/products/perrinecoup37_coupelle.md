@@ -7,7 +7,7 @@ name:
 mini_descr:
     fr: coupelle réalisée par Perrine Pottiez
     en: dish made by Perrine Pottiez
-tags: ['produit', 'perrine-pottiez']
+tags: ['perrine-pottiez']
 description: 
     fr: >
         Coupelle en céramique, 1250°C. Pièce unique.

@@ -7,7 +7,7 @@ name:
 mini_descr:
     fr: Soutenez-nous avec un don de 100 €
     en: Support us with a 100 €
-tags: ['produit', 'dons']
+tags: ['dons']
 description: 
     fr: >
         Faire un don de 100 € et recevoir un kit de dégustation.
@@ -20,4 +20,5 @@ stock: 30
 shipping_type: sans_envoi
 eleventyComputed:
     title: '{{ tags }} - {{ name[page.lang] }}'
+    permalink: "/products/{{ id }}_{{ name['fr'] | slugify }}/"
 ---

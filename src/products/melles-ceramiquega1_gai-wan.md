@@ -7,7 +7,7 @@ name:
 mini_descr:
     fr: GàiWǎn en porcelaine blanche fabriqué à Montpellier
     en: Gaiwan in white porcelain made in Montpellier
-tags: ['produit', 'mademoiselles-ceramique']
+tags: ['mademoiselles-ceramique']
 description: 
     fr: >
         蓋碗 - GàiWǎn en porcelaine blanche. Fabriqué à Montpellier.
@@ -29,4 +29,5 @@ options:
         capacity: 90ml
 eleventyComputed:
     title: '{{ tags }} - {{ name[page.lang] }}'
+    permalink: "/products/{{ id }}_{{ name['fr'] | slugify }}/"
 ---

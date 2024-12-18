@@ -7,7 +7,7 @@ name:
 mini_descr:
     fr: Bol émaillé réalisé par Jé le Potier
     en: Glazed bowl made by Jé le Potier
-tags: ['produit', 'je-le-potier']
+tags: ['je-le-potier']
 description: 
     fr: >
         茶杯 - CháBēi en céramique, 1250°C. Pièce unique.
@@ -28,4 +28,5 @@ options:
         capacity: 50ml
 eleventyComputed:
     title: '{{ tags }} - {{ name[page.lang] }}'
+    permalink: "/products/{{ id }}_{{ name['fr'] | slugify }}/"
 ---

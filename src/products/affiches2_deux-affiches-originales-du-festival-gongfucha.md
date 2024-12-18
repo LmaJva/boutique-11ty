@@ -24,5 +24,6 @@ weight: 125
 shipping_type: tube
 shipping_point: 1
 eleventyComputed:
-    title: "{{ tags }} - {{ name[page.lang] }} - {{ page.lang }}"
+    title: "{{ tags }} - {{ name[page.lang] }}"
+    permalink: "/products/{{ id }}_{{ name['fr'] | slugify }}/"
 ---

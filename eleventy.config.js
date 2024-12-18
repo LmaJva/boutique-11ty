@@ -20,8 +20,8 @@ export const config = {
 };
 
 export default function (eleventyConfig) {
-    eleventyConfig.addPassthroughCopy('src/_assets');
-    eleventyConfig.addPassthroughCopy('bundle.css');
+    eleventyConfig.addPassthroughCopy('src/_assets/icons');
+    eleventyConfig.addPassthroughCopy('src/_assets/404.jpg');
     eleventyConfig.addPassthroughCopy({ 'src/robots.txt': '/robots.txt' });
     eleventyConfig.addPassthroughCopy({ 'src/_headers': '/_headers' });
 
@@ -84,6 +84,10 @@ export default function (eleventyConfig) {
           return callback(err, code);
         }
       });
+
+    eleventyConfig.addCollection("products", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("src/products/*.md");
+    });
     
     eleventyConfig.addCollection('allTags', function (collectionApi) {
         const tagSet = new Set();

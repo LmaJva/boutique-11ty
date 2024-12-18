@@ -7,7 +7,7 @@ name:
 mini_descr:
     fr: théière artisanale (semi-main) de Taïwan
     en: semi-handcrafted teapot from Taiwan
-tags: ['produit', 'chahu']
+tags: ['chahu']
 description: 
     fr: >
         Cette théière de forme 三足乳鼎 - SānZúRǔDǐng fabriquée à 臺灣 - Táiwān en mode 半手工 - BànShǒuGōng, c'est-à-dire semi-manuelle, à l'aide de moules. Elle porte une inscription liée à la culture bouddhiste : 觀自在 - GuānZìZài qui invite à être en paix avec la nature.
@@ -32,4 +32,5 @@ options:
         capacity: 220 ml
 eleventyComputed:
     title: '{{ tags }} - {{ name[page.lang] }}'
+    permalink: "/products/{{ id }}_{{ name['fr'] | slugify }}/"
 ---

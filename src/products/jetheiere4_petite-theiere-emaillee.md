@@ -7,7 +7,7 @@ name:
 mini_descr:
     fr: théière réalisée par Jé le Potier
     en: teapot made by Jé le Potier
-tags: ['produit', 'je-le-potier']
+tags: ['je-le-potier']
 description: 
     fr: >
         Pièce unique. 茶壺 CháHú - petite théière émaillée. L'émail présent à l'intérieur confère à cette théière une certaine polyvalence. La verse est rapide et fluide.
@@ -30,4 +30,5 @@ options:
         capacity: 80ml
 eleventyComputed:
     title: '{{ tags }} - {{ name[page.lang] }}'
+    permalink: "/products/{{ id }}_{{ name['fr'] | slugify }}/"
 ---

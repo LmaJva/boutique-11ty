@@ -7,7 +7,7 @@ name:
 mini_descr:
     fr: ensemble complet pour le GōngFūChá - 工夫茶
     en: complete set for GōngFūChá - 工夫茶
-tags: ['produit', 'gaiwan']
+tags: ['gaiwan']
 description: 
     fr: >
         Ce kit de démarrage comprend les éléments essentiels à la préparation du thé authentique : un 蓋碗 - GàiWǎn, un 茶海 - CháHǎi et trois bols à thé (茶杯 - CháBēi). C'est aussi le compagnon de voyage idéal grâce à sa housse de protection.
@@ -30,4 +30,5 @@ options:
         capacity: 110 ml
 eleventyComputed:
     title: '{{ tags }} - {{ name[page.lang] }}'
+    permalink: "/products/{{ id }}_{{ name['fr'] | slugify }}/"
 ---

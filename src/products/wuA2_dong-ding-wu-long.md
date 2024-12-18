@@ -7,7 +7,7 @@ name:
 mini_descr:
     fr: thé wulong traditionnel de Taïwan
     en: traditional oolong tea from Taiwan
-tags: ['produit', 'cha', 'welcome']
+tags: ['cha', 'welcome']
 description: 
     fr: >
         La famille Li (李家 - LǐJiā) est une lignée traditionnelle de cultivateurs et de producteurs de thé, transmise de génération en génération. Leurs plantations se trouvent principalement dans la région de 鹿谷 - LùGǔ<!--more-->, dans les montagnes de 阿里山 - ĀLǐShān, au centre de Taïwan. 凍頂烏龍茶 - DòngDǐng WūLóngChá a une histoire de plus de cent ans et est l’un des thés les plus renommés de Taïwan. Beaucoup de gens pensent que « Dong Ding » est le nom d’une marque de thé, mais en réalité, 凍頂 - DòngDǐng est le nom d’une montagne. La montagne 凍頂 - DòngDǐng est située dans le canton de 鹿谷 - LùGǔ, dans le comté de 南投 - NánTóu), au sud de Taïwan.
@@ -40,4 +40,5 @@ options:
         weight: 25g
 eleventyComputed:
     title: '{{ tags }} - {{ name[page.lang] }}'
+    permalink: "/products/{{ id }}_{{ name['fr'] | slugify }}/"
 ---

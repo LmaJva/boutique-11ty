@@ -7,7 +7,7 @@ name:
 mini_descr:
     fr: mini jarre à thé réalisé par Perrine Pottiez
     en: small tea jar made by Perrine Pottiez
-tags: ['produit', 'perrine-pottiez']
+tags: ['perrine-pottiez']
 description: 
     fr: >
         茶倉 - CháCāng en céramique, 1250°C. Pièce unique. Une jarre minimaliste idéale pour le rite du GōngFūChá - 工夫茶

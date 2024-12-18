@@ -61,11 +61,12 @@
 @media (min-width: 769px) {
     .item-image {
         max-width: 490px;
-        filter: opacity(60%);
+        opacity: .6;
+        transition: opacity .3s ease;
     }
 
     .item-image:hover {
-        filter: opacity(1);
+        opacity: 1;
     }
 
     .item-title {

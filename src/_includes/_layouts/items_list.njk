@@ -2,7 +2,6 @@
 layout: _layouts/default.njk
 include_items_list_bundle: true
 ---
-
 {% set js %}
     {% include "../../_assets/js/add-to-cart.js" %}
 {% endset %}
@@ -36,7 +35,6 @@ include_items_list_bundle: true
 
 <section class="products-list">
     {% for post in collections[tag.label] %}
-        {% if post.data.page.lang == page.lang %}
         {% set hrefDetails = post.url | customLocaleUrl(page.lang) | url %}
             <article class="shadow item item-infos" data-id="{{ post.data.id }}">
                 <header class="item-header">
@@ -66,6 +64,5 @@ include_items_list_bundle: true
                     {% include 'button_add.njk' %}
                 </footer>
             </article>
-        {% endif %}
     {% endfor %}
 </section>

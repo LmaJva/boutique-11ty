@@ -7,7 +7,7 @@ name:
 mini_descr:
     fr: GàiWǎn réalisé par Manon Clouzeau
     en: Gaiwan made by Manon Clouzeau
-tags: ['produit', 'manon-clouzeau', 'welcome']
+tags: ['manon-clouzeau', 'welcome']
 description: 
     fr: >
         GàiWǎn émaillé. Pièce unique.
@@ -31,4 +31,5 @@ options:
         capacity: 100ml
 eleventyComputed:
     title: '{{ tags }} - {{ name[page.lang] }}'
+    permalink: "/products/{{ id }}_{{ name['fr'] | slugify }}/"
 ---
