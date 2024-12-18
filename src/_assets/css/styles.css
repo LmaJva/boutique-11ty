@@ -101,7 +101,7 @@ select:focus {
 }
 
 .selected {
-    background-color: var(--focus-color) !important;
+    background-color: var(--focus-color);
     color: var(--text-color);
 }
 
@@ -122,7 +122,7 @@ select:focus {
 }
 
 .btn:hover {
-    background-color: var(--secondary-bg);
+    background-color: var(--focus-color) !important;
     color: var(--text-color);
 }
 

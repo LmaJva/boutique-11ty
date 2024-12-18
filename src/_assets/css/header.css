@@ -14,7 +14,6 @@
 }
 
 .nav-list {
-    grid-column: 1 / -1;
     justify-content: center;
     gap: var(--gap-large);
     padding: 0;
@@ -36,6 +35,11 @@
 
 .nav-link .cart-icon:hover {
     opacity: 1;
+}
+
+.logo-link {
+    display: flex;
+    padding-bottom: 1rem;
 }
 
 .logo-link img {
@@ -78,6 +82,12 @@
     text-align: center;
 }
 
+@media (max-width: 769px) {
+    .nav-list {
+        grid-column: 1 / -1;
+    }
+}
+
 @media (min-width: 769px) {
     .header {
         flex-direction: row;
@@ -91,7 +101,7 @@
     .nav-header {
         display: flex;
         align-items: center;
-        padding: 1rem;
+        padding-left: 1rem;
     }
 
     .nav-list {

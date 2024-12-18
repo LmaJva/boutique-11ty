@@ -43,7 +43,7 @@ layout: _layouts/default.njk
     </header>
     <article class="card-details product-infos item-infos" data-id="{{ id }}">
         {%- include 'carousel.njk' -%}
-        <section class="card-info">
+        <div class="card-info">
             <header>
                 <h1 id="content-title" class="card-title">{{ name[page.lang] }}</h1>
                 <h2 class="card-title">{{ mini_descr[page.lang] }}</h2>
@@ -64,6 +64,6 @@ layout: _layouts/default.njk
                 {% include 'price_stock.njk' %}
                 {% include 'button_add.njk' %}
             </footer>
-        </section>
+        </div>
     </article>
 </section>
