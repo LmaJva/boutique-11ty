@@ -2,10 +2,10 @@
 layout: _layouts/product_card.njk
 id: perrinevers40
 name:
-    fr: 茶海 - CháHǎi (verseuse)
+    fr: 茶海 - CháHǎi - verseuse
     en: Pitcher - 茶海 - CháHǎi (tea pitcher)
 mini_descr:
-    fr: verseuse à thé réalisé par Perrine Pottiez
+    fr: verseuse réalisée par Perrine Pottiez 
     en: tea pitcher made by Perrine Pottiez
 tags: ["produit", "perrine-pottiez"]
 description: 

@@ -2,7 +2,7 @@
 layout: _layouts/product_card.njk
 id: jetheiere4
 name:
-    fr: 茶壺 CháHú - Petite théière émaillée
+    fr: 茶壺 CháHú - théière
     en: 茶壺 CháHú - Small Glazed Teapot
 mini_descr:
     fr: théière réalisée par Jé le Potier

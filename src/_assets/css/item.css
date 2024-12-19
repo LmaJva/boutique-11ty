@@ -4,6 +4,8 @@
     grid-auto-rows: min-content;
     border: var(--border-thin);
     background: var(--secondary-bg);
+    min-width: 18rem;
+    max-width: 43rem;
 }
 
 .item-header {
@@ -64,8 +66,8 @@
 }
 
 @media (min-width: 769px) {
-    .item-image {
-        max-width: 490px;
+    .item {
+        max-width: 32rem;
     }
 
     .item-title {

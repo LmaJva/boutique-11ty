@@ -2,11 +2,11 @@
 layout: _layouts/product_card.njk
 id: perrinebol25
 name:
-    fr: 茶杯 - CháBēi (petit bol à thé)
-    en: 茶杯 - CháBēi (small tea bowl)
+    fr: 茶杯 - CháBēi - bol à thé
+    en: 茶杯 - CháBēi (tea bowl)
 mini_descr:
-    fr: petit bol à thé réalisé par Perrine Pottiez
-    en: small tea bowl made by Perrine Pottiez
+    fr: bol réalisé par Perrine Pottiez  
+    en: tea bowl made by Perrine Pottiez
 tags: ['perrine-pottiez']
 description: 
     fr: >

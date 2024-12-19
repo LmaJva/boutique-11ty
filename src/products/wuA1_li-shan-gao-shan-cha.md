@@ -2,11 +2,11 @@
 layout: _layouts/product_card.njk
 id: wuA1
 name:
-    fr: 梨山高山茶 - LíShān GāoShānChá - 25g
-    en: 梨山高山茶 - LíShān GāoShānChá - 25g
+    fr: 梨山高山茶 - LíShān GāoShānChá
+    en: 梨山高山茶 - LíShān GāoShānChá
 mini_descr:
-    fr: thé wulong traditionnel de haute montagne de Taïwan
-    en: traditional high mountain oolong tea from Taiwan
+    fr: wulong haute montagne de Taïwan - 25g
+    en: high mountain oolong tea from Taiwan - 25g
 tags: ['cha']
 description: 
     fr: >

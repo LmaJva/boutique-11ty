@@ -2,8 +2,8 @@
 layout: _layouts/product_card.njk
 id: th9
 name:
-    fr: 茶壺 CháHú (Théière) 三足乳鼎 - SānZúRǔDǐng
-    en: 茶壺 CháHú (Teapot) 三足乳鼎 - SānZúRǔDǐng
+    fr: 茶壺  三足乳鼎 CháHú SānZúRǔDǐng
+    en: 茶壺  三足乳鼎 CháHú SānZúRǔDǐng
 mini_descr:
     fr: théière artisanale (semi-main) de Taïwan
     en: semi-handcrafted teapot from Taiwan

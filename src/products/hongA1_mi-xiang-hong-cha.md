@@ -2,11 +2,11 @@
 layout: _layouts/product_card.njk
 id: hongA1
 name:
-    fr: 蜜香红茶 - MìXiāng HóngChá - 25g
-    en: 蜜香红茶 - MìXiāng HóngChá - 25g
+    fr: 蜜香红茶 - MìXiāng HóngChá
+    en: 蜜香红茶 - MìXiāng HóngChá
 mini_descr:
-    fr: thé rouge traditionnel de Taïwan
-    en: traditional Taiwanese black tea
+    fr: thé rouge traditionnel de Taïwan - 25g
+    en: traditional Taiwanese black tea - 25g
 tags: ["produit", "cha"]
 description: 
     fr: >

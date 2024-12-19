@@ -2,7 +2,7 @@
 layout: _layouts/product_card.njk
 id: melles-ceramiquetheiere1
 name:
-    fr: 茶壺 CháHú - théière en terre brute
+    fr: 茶壺 CháHú - théière
     en: 茶壺 CháHú - Teapot in Raw Clay
 mini_descr:
     fr: Théière réalisée par Mademoiselles Céramique

@@ -2,11 +2,11 @@
 layout: _layouts/product_card.njk
 id: baiA2
 name:
-    fr: 白鹿白茶 - BáiLù BáiChá - 25g
-    en: 白鹿白茶 - BáiLù BáiChá - 25g
+    fr: 白鹿白茶 - BáiLù BáiChá
+    en: 白鹿白茶 - BáiLù BáiChá
 mini_descr:
-    fr: infusion fabriquée comme un thé blanc
-    en: infusion crafted like white tea
+    fr: infusion fabriquée comme un thé blanc - 25g
+    en: infusion crafted like white tea - 25g
 tags: ['cha', 'welcome']
 description: 
     fr: >

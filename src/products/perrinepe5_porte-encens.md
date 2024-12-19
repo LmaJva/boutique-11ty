@@ -2,10 +2,10 @@
 layout: _layouts/product_card.njk
 id: perrinepe5
 name:
-    fr: 香托 - XiāngTuō (porte-encens)
+    fr: 香托 - XiāngTuō
     en: Incense Holder - 香托 - XiāngTuō
 mini_descr:
-    fr: porte-encens cascade réalisé par Perrine Pottiez
+    fr: porte-encens cascade
     en: waterfall incense holder made by Perrine Pottiez
 tags: ['perrine-pottiez']
 description: 

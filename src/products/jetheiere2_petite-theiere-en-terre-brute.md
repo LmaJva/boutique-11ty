@@ -2,10 +2,10 @@
 layout: _layouts/product_card.njk
 id: jetheiere2
 name:
-    fr: 茶壺 CháHú - théière en terre brute
+    fr: 茶壺 CháHú - théière
     en: 茶壺 CháHú - Teapot in Raw Clay
 mini_descr:
-    fr: Petite théière fabriquée par Jé le potier.
+    fr: théière fabriquée par Jé le potier.
     en: Small teapot crafted by Jé le potier.
 tags: ['je-le-potier']
 description: 

@@ -2,11 +2,11 @@
 layout: _layouts/product_card.njk
 id: wuA3
 name:
-    fr: 金萱高山茶 - JīnXuān GāoShānChá - 25g
-    en: 金萱高山茶 - JīnXuān GāoShānChá - 25g
+    fr: 金萱高山茶 - JīnXuān GāoShānChá
+    en: 金萱高山茶 - JīnXuān GāoShānChá
 mini_descr:
-    fr: thé wulong traditionnel de Taïwan
-    en: traditional oolong tea from Taiwan
+    fr: thé wulong traditionnel de Taïwan - 25g
+    en: traditional oolong tea from Taiwan - 25g
 tags: ['cha']
 description: 
     fr: >
