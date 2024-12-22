@@ -6,6 +6,11 @@ import { minify } from "terser";
 import { eleventyImageOnRequestDuringServePlugin } from "@11ty/eleventy-img";
 import path from 'path';
 
+async function getProducts() {
+    const productsModule = await import("./src/_data/products.mjs");
+    return await productsModule.default();
+}
+
 export const config = {
     dir: {
         input: 'src',
@@ -85,28 +90,27 @@ export default function (eleventyConfig) {
         }
       });
 
-    eleventyConfig.addCollection("products", function(collectionApi) {
-        return collectionApi.getFilteredByGlob("src/products/*.md");
+    eleventyConfig.addCollection("products", async function () {
+        const data = await getProducts();
+        return data;
     });
     
-    eleventyConfig.addCollection('allTags', function (collectionApi) {
-        const tagSet = new Set();
-
-        collectionApi.getAll().forEach((item) => {
-            if ('tags' in item.data) {
-                let tags = item.data.tags;
-
-                if (typeof tags === 'string') {
-                    tags = [tags];
-                }
-
-                tags.forEach((tag) => tagSet.add(tag));
+    (async function generateTagCollections() {
+        const data = await getProducts();
+    
+        const uniqueTags = new Set();
+        data.forEach(product => {
+            if (product.tags) {
+                product.tags.forEach(tag => uniqueTags.add(tag));
             }
         });
-
-        return [...tagSet];
-    });
-
+    
+        uniqueTags.forEach(tag => {
+            eleventyConfig.addCollection(tag, () => {
+                return data.filter(product => product.tags && product.tags.includes(tag));
+            });
+        });
+    })();
 
     eleventyConfig.addNunjucksAsyncShortcode('image_product', async (src, cls, alt, sizes) => {
         let metadata = await Image(`photos/${src}`, {

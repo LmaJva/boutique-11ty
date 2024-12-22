@@ -29,7 +29,7 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     scroll-behavior: smooth;
-    padding: 5rem;
+    padding: 0 5rem;
 }
 
 h1,
@@ -50,11 +50,6 @@ ul {
 
 #_404 img {
     border: var(--border-thin);
-}
-
-.disabled {
-    opacity: 0.8;
-    cursor: not-allowed;
 }
 
 .display-none {
@@ -125,6 +120,11 @@ select:focus {
 .btn:hover {
     background-color: var(--focus-color) !important;
     color: var(--text-color);
+}
+
+.disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
 }
 
 #no-cart,

@@ -128,10 +128,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         itemElement.classList.add('shadow')
         itemElement.innerHTML = `
             <header class="item-header">
-                <h2 class="item-title">${productData.title.fr}</h2>
+                <h2 class="item-title">${productData.title[currentLang]}</h2>
             </header>
             <figure class="item-figure">
-               <img class="item-image" alt="image - ${productData.title.fr}" loading="lazy" decoding="async" src="/img/${imageName}-365w.webp" width="365" height="242" srcset="/img/${imageName}-365w.webp" sizes="365px">
+               <img class="item-image" alt="image - ${productData.title[currentLang]}" loading="lazy" decoding="async" src="/img/${imageName}-365w.webp" width="365" height="242" srcset="/img/${imageName}-365w.webp" sizes="365px">
             </figure>
             <section class="item-details">
                 <data class="price" value="${productData.price}" itemprop="price">
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <meta itemprop="priceCurrency" content="EUR" >
             </section>
             <footer class="item-footer">
-                <a href="${productData.link}" class="btn btn-details" aria-label="${t('button_detail')}">
+                <a href="${productData.permalinks[currentLang]}" class="btn btn-details" aria-label="${t('button_detail')}">
                     ${t('button_detail')}
                 </a>
                 <a href="#!" class="btn btn-card remove-from-cart" data-id="${cartItem.id}" aria-label="${t('button_remove')}">
