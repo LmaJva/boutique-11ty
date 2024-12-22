@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 export default async function() {
   try {
-    const response = await fetch('http://localhost:8080/products.json');
+    const response = await fetch('https://brutdethe.github.io/boutique-11ty_data/products.json');
     if (!response.ok) {
       throw new Error(`Erreur HTTP ! statut : ${response.status}`);
     }
