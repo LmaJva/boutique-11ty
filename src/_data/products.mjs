@@ -1,8 +1,11 @@
 import fetch from 'node-fetch';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export default async function() {
   try {
-    const response = await fetch('https://brutdethe.github.io/boutique-11ty_data/products.json');
+    const response = await fetch(process.env.DATA_URL);
     if (!response.ok) {
       throw new Error(`Erreur HTTP ! statut : ${response.status}`);
     }
