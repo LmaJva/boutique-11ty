@@ -5,7 +5,7 @@ dotenv.config();
 
 export default async function() {
   try {
-    const response = await fetch(`${process.env.DATA_URL}products.json`);
+    const response = await fetch(`${process.env.DATA_URL}settings.json`);
     if (!response.ok) {
       throw new Error(`Erreur HTTP ! statut : ${response.status}`);
     }

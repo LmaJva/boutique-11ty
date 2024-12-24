@@ -6,7 +6,7 @@ eleventyExcludeFromCollections: true
 
 # Mentions légales
 
-Le site [https://boutique.gongfucha.fr](https://boutique.gongfucha.fr) est édité par Stéphane Langlois, Yalin Cheng, Brut de thé et hébergé par [Github](https://github.com/about).
+Le site [{{ settings.url }}]({{ settings.url }}) est édité par Stéphane Langlois, Yalin Cheng, Brut de thé et hébergé par [Github](https://github.com/about).
 
 Entreprise répertoriée sous le numéro d’immatriculation 899 032 494 et le code APE 94.99Z auprès du des greffes du trifor his “co-piloting”.bunal de Foix  
 et dont le siège social est sis au 15 rue de la montagne, 09320 Massat.

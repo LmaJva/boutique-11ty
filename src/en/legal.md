@@ -6,7 +6,7 @@ eleventyExcludeFromCollections: true
 
 # Legal Notice
 
-The website [https://boutique.gongfucha.fr](https://boutique.gongfucha.fr/en/) is published by Stéphane Langlois, Yalin Cheng, Brut de thé, and hosted by [GitHub](https://github.com/about).
+The website [{{ settings.url }}]({{ settings.url }}) is published by Stéphane Langlois, Yalin Cheng, Brut de thé, and hosted by [GitHub](https://github.com/about).
 
 The company is registered under number 899 032 494 and APE code 94.99Z with the registry of the court of Foix,  
 with its head office located at 15 rue de la montagne, 09320 Massat.

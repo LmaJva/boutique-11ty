@@ -351,7 +351,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             
                 const { sessionId } = await response.json()
             
-                const stripe = Stripe('pk_live_51HEFz3GJpQWhfcWwhCYHYe1ErHxMdZEd8ZR9stq8WIK6QRXVUlPFbvSCFQPCdUFYPbIVESTrZUbykYDW95FxtFNb00HuTOpKCx')
+                const stripe = Stripe(settings.STRIPE_PUBLIC_KEY)
                 await stripe.redirectToCheckout({ sessionId })
             
             } catch (err) {
