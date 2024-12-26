@@ -29,6 +29,7 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     scroll-behavior: smooth;
+    padding: 0 5rem;
 }
 
 h1,
@@ -49,12 +50,6 @@ ul {
 
 #_404 img {
     border: var(--border-thin);
-}
-
-.disabled {
-    opacity: 0.5;
-    pointer-events: none;
-    cursor: not-allowed !important;
 }
 
 .display-none {
@@ -101,7 +96,7 @@ select:focus {
 }
 
 .selected {
-    background-color: var(--focus-color) !important;
+    background-color: var(--focus-color);
     color: var(--text-color);
 }
 
@@ -119,11 +114,17 @@ select:focus {
     text-decoration: none !important;
     transition: background 0.3s ease, transform 0.2s ease;
     line-height: 1rem;
+    cursor: pointer;
 }
 
 .btn:hover {
-    background-color: var(--secondary-bg);
+    background-color: var(--focus-color) !important;
     color: var(--text-color);
+}
+
+.disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
 }
 
 #no-cart,

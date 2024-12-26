@@ -11,7 +11,6 @@
 }
 
 .card-image {
-    width: 100%;
     max-width: 100%;
     height: auto;
 }
@@ -41,11 +40,10 @@
 }
 
 .card-thumbnail {
-    width: 4rem;
     cursor: pointer;
     opacity: 0.4;
     border: var(--border-thin);
-    margin: 0;
+    padding: 0;
     transition: opacity 0.3s ease;
 }
 
@@ -99,10 +97,6 @@ h2.card-title {
 }
 
 @media (min-width: 769px) {
-    .card-image {
-        max-width: 925px;
-    }
-
     .card-details {
         display: grid;
         grid-template-columns: 1fr 1fr;

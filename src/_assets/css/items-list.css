@@ -28,6 +28,7 @@
     }
 
     .products-list {
-        grid-template-columns: repeat(3, 1fr);
+        grid-column: span 3;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
     }
 }

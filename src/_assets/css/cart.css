@@ -94,6 +94,11 @@
     font-size: 1.1rem;
 }
 
+.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
 @media (min-width: 769px) {
     #cart {
         display: grid;
@@ -103,11 +108,12 @@
     #cart-ticket {
         order: initial;
         max-height: 35rem;
+        min-width: 15rem;
     }
 
     #cart-content {
         grid-column: span 3;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
     }
 
     .item-details .price {

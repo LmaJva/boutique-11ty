@@ -128,10 +128,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         itemElement.classList.add('shadow')
         itemElement.innerHTML = `
             <header class="item-header">
-                <h2 class="item-title">${productData.title.fr}</h2>
+                <h2 class="item-title">${productData.title[currentLang]}</h2>
             </header>
             <figure class="item-figure">
-               <img class="item-image" alt="image - ${productData.title.fr}" loading="lazy" decoding="async" src="/img/${imageName}-365w.webp" width="365" height="242" srcset="/img/${imageName}-365w.webp" sizes="365px">
+               <img class="item-image" alt="image - ${productData.title[currentLang]}" loading="lazy" decoding="async" src="/img/${imageName}-365w.webp" width="365" height="242" srcset="/img/${imageName}-365w.webp" sizes="365px">
             </figure>
             <section class="item-details">
                 <data class="price" value="${productData.price}" itemprop="price">
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <meta itemprop="priceCurrency" content="EUR" >
             </section>
             <footer class="item-footer">
-                <a href="${productData.link}" class="btn btn-details" aria-label="${t('button_detail')}">
+                <a href="${productData.permalinks[currentLang]}" class="btn btn-details" aria-label="${t('button_detail')}">
                     ${t('button_detail')}
                 </a>
                 <a href="#!" class="btn btn-card remove-from-cart" data-id="${cartItem.id}" aria-label="${t('button_remove')}">
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                         shippingGroups[productData.shipping_type] = {
                             totalPoints: 0,
                             totalWeight: 0,
-                            colisData: shippingData.types_colis[productData.shipping_type]
+                            colisData: shipping_rate.types_colis[productData.shipping_type]
                         }
                     }
                     shippingGroups[productData.shipping_type].totalPoints += productData.shipping_point * cartItem.qty
@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function calculateCostForColis(totalWeight, selectedZone) {
-        const tarifs = shippingData.grille_tarifs[selectedZone].tarifs
+        const tarifs = shipping_rate.grille_tarifs[selectedZone].tarifs
         const tarif = tarifs.find(t => totalWeight <= t.poids_max)
         return tarif ? tarif.tarif : 0
     }
@@ -351,7 +351,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             
                 const { sessionId } = await response.json()
             
-                const stripe = Stripe('pk_live_51HEFz3GJpQWhfcWwhCYHYe1ErHxMdZEd8ZR9stq8WIK6QRXVUlPFbvSCFQPCdUFYPbIVESTrZUbykYDW95FxtFNb00HuTOpKCx')
+                const stripe = Stripe(settings.STRIPE_PUBLIC_KEY)
                 await stripe.redirectToCheckout({ sessionId })
             
             } catch (err) {

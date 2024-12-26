@@ -25,22 +25,24 @@ layout: _layouts/default.njk
 <style>
 	{{ css | cssmin | safe }}
 </style>
-{% set tag = { 'label': tags[1] } %}
+
+{% set tag = { 'label': product.tags[0] } %}
 <section aria-labelledby="card-title">
     <header>
         {% include 'tags_list.njk' %}
     </header>
-    <article class="card-details product-infos item-infos" data-id="{{ id }}">
+    <article class="card-details product-infos item-infos" data-id="{{ product.id }}">
+        {% set photos = product.photos %}
         {%- include 'carousel.njk' -%}
-        <section class="card-info">
+        <div class="card-info">
             <header>
-                <h1 id="content-title" class="card-title">{{ name[page.lang] }}</h1>
-                <h2 class="card-title">{{ mini_descr[page.lang] }}</h2>
+                <h1 id="content-title" class="card-title">{{ product.name[page.lang] }}</h1>
+                <h2 class="card-title">{{ product.mini_descr[page.lang] }}</h2>
             </header>
             <section class="card-description">
-                <p>{{ description[page.lang] | safe }}</p>
+                <p>{{ product.description[page.lang] | safe }}</p>
                 <dl>
-                    {% for key, value in options[page.lang] %}
+                    {% for key, value in product.options[page.lang] %}
                     <dt>
                         {{ key }}{% if page.lang == 'fr'%}&nbsp;{% endif
                         %}:&nbsp;
@@ -50,9 +52,11 @@ layout: _layouts/default.njk
                 </dl>
             </section>
             <footer class="card-footer">
+                {% set price = product.price %}
+                {% set stock = product.stock %}
                 {% include 'price_stock.njk' %}
                 {% include 'button_add.njk' %}
             </footer>
-        </section>
+        </div>
     </article>
 </section>

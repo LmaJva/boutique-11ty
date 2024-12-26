@@ -4,6 +4,8 @@
     grid-auto-rows: min-content;
     border: var(--border-thin);
     background: var(--secondary-bg);
+    min-width: 18rem;
+    max-width: 43rem;
 }
 
 .item-header {
@@ -39,6 +41,11 @@
     height: auto;
     border-top: var(--border-thin);
     border-bottom: var(--border-thin);
+    transition: transform 0.3s ease-in-out;
+}
+
+.item-image:hover {
+    transform: scale(1.01);
 }
 
 .item-description {
@@ -59,13 +66,8 @@
 }
 
 @media (min-width: 769px) {
-    .item-image {
-        max-width: 490px;
-        filter: opacity(60%);
-    }
-
-    .item-image:hover {
-        filter: opacity(1);
+    .item {
+        max-width: 32rem;
     }
 
     .item-title {

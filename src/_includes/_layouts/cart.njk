@@ -13,7 +13,7 @@ eleventyComputed:
 {% endset %}
 
 <script>
-    {{ js | jsmin | safe }}
+    {{ js | safe }}
 </script>
 
 {% set css %}
@@ -71,7 +71,8 @@ eleventyComputed:
 {% include 'loader.njk' %}
 
 <script>
-    const shippingData = {{ shipping_rate | dump | safe }}
+    const settings = {{ settings | dump | safe }};
+    const shipping_rate = {{ shipping_rate | dump | safe }};
 </script>
 
 

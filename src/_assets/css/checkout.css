@@ -1,6 +1,6 @@
 #checkout-button {
     background: var(--focus-color);
-    color: var(--hover-color);
+    color: var(--text-color);
     font-weight: 600;
     border: var(--border-thin);
     display: inline-flex;

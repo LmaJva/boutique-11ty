@@ -6,4 +6,4 @@ eleventyExcludeFromCollections: true
 
 # Privacy
 
-The website [https://boutique.brutdethé.fr](https://boutique.brutdethé.fr) does not collect any personal data.
+The website [{{ settings.url }}]({{ settings.url }}) does not collect any personal data.

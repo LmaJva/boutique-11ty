@@ -6,9 +6,11 @@
 .btn-card {
     background: var(--primary-color);
     color: var(--bg-color);
+    border: none;
 }
 
 .btn-card:hover {
+    cursor: pointer;
     background: var(--hover-color);
     transform: scale(1.05);
     color: var(--secondary-bg);

@@ -1,39 +1,40 @@
 {
-  "name": "boutique-11ty",
-  "version": "1.0.0",
-  "description": "Une petite boutique de vente en 11ty",
-  "main": "index.js",
-  "scripts": {
-    "import": "node ./script/import/generateMD.js",
-    "resize": "node ./script/resize/resize.js",
-    "build": "npx @11ty/eleventy"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brutdethe/boutique-11ty.git"
-  },
-  "keywords": [],
-  "author": "pntbr",
-  "license": "CC0-1.0",
-  "bugs": {
-    "url": "https://github.com/brutdethe/boutique-11ty/issues"
-  },
-  "homepage": "https://github.com/brutdethe/boutique-11ty#readme",
-  "type": "module",
-  "dependencies": {
-    "@11ty/eleventy": "^3.0.0",
-    "@11ty/eleventy-img": "^5.0.0",
-    "@splidejs/splide": "^4.1.4",
-    "clean-css": "^5.3.3",
-    "netlify-cli": "^17.38.0",
-    "normalize.css": "^8.0.1",
-    "stripe": "^17.4.0",
-    "terser": "^5.37.0",
-    "to": "^0.2.9",
-    "update": "^0.4.2"
-  },
-  "devDependencies": {
-    "js-yaml": "^4.1.0",
-    "sharp": "^0.33.5"
-  }
+    "name": "boutique-11ty",
+    "version": "1.0.0",
+    "description": "Une petite boutique de vente en 11ty",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "import": "node ./script/import/generateMD.js",
+        "resize": "node ./script/resize/resize.js",
+        "build": "npx @11ty/eleventy"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/brutdethe/boutique-11ty.git"
+    },
+    "keywords": [],
+    "author": "pntbr",
+    "license": "CC0-1.0",
+    "bugs": {
+        "url": "https://github.com/brutdethe/boutique-11ty/issues"
+    },
+    "homepage": "https://github.com/brutdethe/boutique-11ty#readme",
+    "dependencies": {
+        "@11ty/eleventy": "^3.0.0",
+        "@11ty/eleventy-img": "^5.0.0",
+        "@splidejs/splide": "^4.1.4",
+        "clean-css": "^5.3.3",
+        "dotenv": "^16.4.7",
+        "netlify-cli": "^17.38.0",
+        "normalize.css": "^8.0.1",
+        "stripe": "^17.4.0",
+        "terser": "^5.37.0",
+        "to": "^0.2.9",
+        "update": "^0.4.2"
+    },
+    "devDependencies": {
+        "js-yaml": "^4.1.0",
+        "sharp": "^0.33.5"
+    }
 }
