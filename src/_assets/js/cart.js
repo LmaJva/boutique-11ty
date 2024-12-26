@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                         shippingGroups[productData.shipping_type] = {
                             totalPoints: 0,
                             totalWeight: 0,
-                            colisData: shippingData.types_colis[productData.shipping_type]
+                            colisData: shipping_rate.types_colis[productData.shipping_type]
                         }
                     }
                     shippingGroups[productData.shipping_type].totalPoints += productData.shipping_point * cartItem.qty
@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function calculateCostForColis(totalWeight, selectedZone) {
-        const tarifs = shippingData.grille_tarifs[selectedZone].tarifs
+        const tarifs = shipping_rate.grille_tarifs[selectedZone].tarifs
         const tarif = tarifs.find(t => totalWeight <= t.poids_max)
         return tarif ? tarif.tarif : 0
     }

@@ -2,8 +2,8 @@ import Stripe from 'stripe'
 
 const stripeClient = new Stripe(process.env.STRIPE_SECRET_KEY)
 
-async function getProducts(currentLang) {
-  const response = await fetch(`${process.env.URL}/products.json`)
+async function getProducts() {
+  const response = await fetch(`${process.env.DATA_URL}/products.json`)
   if (!response.ok) {
     throw new Error('Network response was not ok')
   }
