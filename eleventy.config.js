@@ -64,6 +64,11 @@ export default function (eleventyConfig) {
         return `/${lang}${path}`;
     });
 
+    eleventyConfig.addFilter("formatPrice", (price, lang) => {
+        const priceFixed = parseFloat(price).toFixed(2)
+        return (lang === "fr") ? priceFixed.replace('.', ',') : priceFixed
+    });
+
     eleventyConfig.addFilter("sortCountries", (countries, lang) => {
         return countries.sort((a, b) => {
             return a[lang].localeCompare(b[lang]);

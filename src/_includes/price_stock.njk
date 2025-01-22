@@ -4,7 +4,7 @@
     itemprop="price"
     aria-label="{{ i18n.price[page.lang] }}"
 >
-    {{ price | float | round(2) }} €
+    {{ price | formatPrice(page.lang) }} €
     {% if stock < 6 %}
         <span class="stock">- ({{ i18n.stock[page.lang] | with({stock: stock}) }})</span>
     {% endif %}
