@@ -20,18 +20,18 @@
     <address itemscope itemtype="https://schema.org/PostalAddress">
         <span itemprop="name">{{ i18n.address_title[page.lang] }}</span>
         <a href="https://www.openstreetmap.org/node/3514787034" aria-label="{{ i18n_aria.aria.view_address[page.lang] }}" target="_blank" rel="noopener noreferrer">
-            <span itemprop="streetAddress">15, rue de la montagne</span> - 
-            <span itemprop="postalCode">09320</span>
-            <span itemprop="addressLocality">Massat</span>
+            <span itemprop="streetAddress">{{ settings.rue }}</span> - 
+            <span itemprop="postalCode">{{ settings.code_postal }}</span>
+            <span itemprop="addressLocality">{{ settings.ville }}</span>
         </a> - 
-        <span itemprop="addressRegion">Ariège</span> - 
-        <data itemprop="addressCountry" value="FR">France</data>
+        <span itemprop="addressRegion">{{ settings.region }}</span> - 
+        <data itemprop="addressCountry" value="FR">{{ settings.pays }}</data>
         <div class="contact-info" itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
-            <a href="mailto:&#99;&#111;&#117;&#99;&#111;&#117;&#64;&#103;&#111;&#110;&#103;&#102;&#117;&#99;&#104;&#97;&#46;&#102;&#114;"class="email"  itemprop="email" aria-label="{{ i18n_aria.aria.send_email[page.lang] }}">
-                coucou@gongfucha.fr
+            <a href="mailto:{{ settings.email }}"class="email"  itemprop="email" aria-label="{{ i18n_aria.aria.send_email[page.lang] }}">
+                {{ settings.email }}
             </a>
-            <a href="tel:+33666081188" itemprop="telephone" class="phone" aria-label="{{ i18n_aria.aria.call_phone[page.lang] }}">
-                +33 666 081 188
+            <a href="tel:{{ settings.tel }}" itemprop="telephone" class="phone" aria-label="{{ i18n_aria.aria.call_phone[page.lang] }}">
+                +{{ settings.tel }}
             </a>
         </div>
     </address>
