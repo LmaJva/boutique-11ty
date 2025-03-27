@@ -141,23 +141,4 @@ export default function (eleventyConfig) {
     
         return Image.generateHTML(metadata, imageAttributes);
     });
-
-    eleventyConfig.addNunjucksAsyncShortcode('logo', async (src, alt, sizes) => {
-
-        let metadata = await Image(`${process.env.DATA_URL}icons/${src}`, {
-            widths: [128, 80],
-            formats: ['svg'],
-            outputDir: './dist/img/',
-            urlPath: '/img/',
-          })
-
-        let imageAttributes = {
-            alt,
-            sizes,
-            loading: 'lazy',
-            decoding: 'async',
-        };
-
-        return Image.generateHTML(metadata, imageAttributes);
-    });
 }

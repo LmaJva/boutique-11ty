@@ -1,6 +1,6 @@
 <header class="header" role="banner">
     <a href="{{ '/' | customLocaleUrl(page.lang) | url }}" class="logo-link" aria-label="{{ i18n_aria.aria.home[page.lang] }}">
-        {% logo "logo.svg", i18n.alt_logo[page.lang], '(max-width: 769px) 128px, 80px' %}
+       <img src="{{ settings.DATA_URL }}icons/logo.svg" alt="logo" aria-label="logo">
     </a>
     <nav class="nav-header">
         <ul class="list nav-list">
