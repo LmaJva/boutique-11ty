@@ -144,7 +144,7 @@ export default function (eleventyConfig) {
 
     eleventyConfig.addNunjucksAsyncShortcode('logo', async (src, alt, sizes) => {
 
-        let metadata = await Image(`src/_assets/icons/${src}`, {
+        let metadata = await Image(`${process.env.DATA_URL}icons/${src}`, {
             widths: [128, 80],
             formats: ['svg'],
             outputDir: './dist/img/',
