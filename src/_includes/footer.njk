@@ -27,10 +27,10 @@
         <span itemprop="addressRegion">{{ settings.region }}</span> - 
         <data itemprop="addressCountry" value="FR">{{ settings.pays }}</data>
         <div class="contact-info" itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
-            <a href="mailto:{{ settings.email }}"class="email"  itemprop="email" aria-label="{{ i18n_aria.aria.send_email[page.lang] }}">
+            <a href="mailto:{{ settings.email }}"class="email"  itemprop="email" aria-label="{{ i18n_aria.aria.send_email[page.lang] }} {{ settings.email }}">
                 {{ settings.email }}
             </a>
-            <a href="tel:{{ settings.tel }}" itemprop="telephone" class="phone" aria-label="{{ i18n_aria.aria.call_phone[page.lang] }}">
+            <a href="tel:{{ settings.tel }}" itemprop="telephone" class="phone" aria-label="{{ i18n_aria.aria.call_phone[page.lang] }} +{{ settings.tel }}">
                 +{{ settings.tel }}
             </a>
         </div>
