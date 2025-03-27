@@ -22,9 +22,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    storage.getCountry = () => localStorage.getItem('country') || 'FR',
+    storage.getCountry = () => localStorage.getItem('shop11ty_country') || 'FR',
     storage.setCountry = (country) => {
-            localStorage.setItem('country', country)
+            localStorage.setItem('shop11ty_country', country)
         }
 
     const sectionCart = document.getElementById('cart')
