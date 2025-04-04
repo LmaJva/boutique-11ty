@@ -60,12 +60,12 @@ aria:
         en: view slide
 
     send_email:
-        fr: envoyer un email à coucou@gongfucha.fr
-        en: send an email to coucou@gongfucha.fr
+        fr: envoyer un email à 
+        en: send an email to 
 
     call_phone:
-        fr: passer un coup de fil au +33 666 081 188
-        en: call +33 666 081 188
+        fr: passer un coup de fil au 
+        en: call 
 
     view_address:
         fr: voir l'adresse sur OpenStreetMap

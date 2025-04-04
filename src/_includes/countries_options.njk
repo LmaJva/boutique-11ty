@@ -1,4 +1,3 @@
-{{ shipping_countries | dump | safe }}
 {% set sorted_countries = shipping_countries | sortCountries(page.lang) %}
 {% for country in sorted_countries %}
   <option value="{{ country.zone }}" data-iso="{{ country.iso }}">

@@ -22,9 +22,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    storage.getCountry = () => localStorage.getItem('country') || 'FR',
+    storage.getCountry = () => localStorage.getItem('shop11ty_country') || 'FR',
     storage.setCountry = (country) => {
-            localStorage.setItem('country', country)
+            localStorage.setItem('shop11ty_country', country)
         }
 
     const sectionCart = document.getElementById('cart')
@@ -38,17 +38,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     const fullscreenLoader = document.getElementById('fullscreen-loader')
     const successPayment = document.getElementById('payment-successed')
 
-    const currentLang = getActiveLanguage()
+    const CURRENT_LANG = getActiveLanguage()
 
     const productsData = await fetchProductsData()
 
     let totalShippingCost = 0;
 
-    initialize(currentLang)
+    initialize()
 
-    async function initialize(currentLang) {
+    async function initialize() {
         successPayment && resetCartForSuccessPayment()
-        checkoutButton && checkoutButtonEventListener(currentLang)
+        checkoutButton && checkoutButtonEventListener()
 
         if (sectionCart && sectionNoCart) {
             if (shippingSelect) {
@@ -62,13 +62,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             updateCartVisibility()
 
             if (storage.getCart().length !== 0) {
-                initializeCart(currentLang)
+                initializeCart()
             }
         }
     }
 
     function t(key) {
-        return translations[key]?.[currentLang] || key
+        return translations[key]?.[CURRENT_LANG] || key
     }
 
     function resetCartForSuccessPayment() {
@@ -88,12 +88,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    function initializeCart(currentLang) {
+    function initializeCart() {
         const cartItems = storage.getCart()
         cartItems.forEach((cartItem) => {
             const productData = productsData.find((product) => String(product.id) === String(cartItem.id))
             if (productData) {
-                const itemElement = createCartItemElement(productData, cartItem, currentLang)
+                const itemElement = createCartItemElement(productData, cartItem)
                 cartContent.appendChild(itemElement)
             }
         })
@@ -121,21 +121,26 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    function createCartItemElement(productData, cartItem, currentLang) {
+    function formatPrice(price) {
+        const priceFixed = parseFloat(price).toFixed(2)
+        return (CURRENT_LANG === "fr") ? priceFixed.replace('.', ',') : priceFixed
+    }
+
+    function createCartItemElement(productData, cartItem) {
         const itemElement = document.createElement('article')
         const imageName = productData.image.replace(/\.[^/.]+$/, '')
         itemElement.classList.add('item')
         itemElement.classList.add('shadow')
         itemElement.innerHTML = `
             <header class="item-header">
-                <h2 class="item-title">${productData.title[currentLang]}</h2>
+                <h2 class="item-title">${productData.title[CURRENT_LANG]}</h2>
             </header>
             <figure class="item-figure">
-               <img class="item-image" alt="image - ${productData.title[currentLang]}" loading="lazy" decoding="async" src="/img/${imageName}-365w.webp" width="365" height="242" srcset="/img/${imageName}-365w.webp" sizes="365px">
+               <img class="item-image" alt="image - ${productData.title[CURRENT_LANG]}" loading="lazy" decoding="async" src="/img/${imageName}-365w.webp" width="365" height="242" srcset="/img/${imageName}-365w.webp" sizes="365px">
             </figure>
             <section class="item-details">
                 <data class="price" value="${productData.price}" itemprop="price">
-                    ${parseFloat(productData.price).toFixed(2)} €
+                    ${formatPrice(productData.price)} €
                 </data>
                 <meta itemprop="priceCurrency" content="EUR" >
                 <div class="qty-input">
@@ -148,13 +153,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                         +
                     </button>
                 </div>
-                <data class="item-total-price price" value="${(parseFloat(productData.price) * cartItem.qty).toFixed(2)}" itemprop="price">
-                    ${(parseFloat(productData.price) * cartItem.qty).toFixed(2)} €
+                <data class="item-total-price price" value="${productData.price * cartItem.qty}" itemprop="price">
+                    ${formatPrice(productData.price * cartItem.qty)} €
                 </data>
                 <meta itemprop="priceCurrency" content="EUR" >
             </section>
             <footer class="item-footer">
-                <a href="${productData.permalinks[currentLang]}" class="btn btn-details" aria-label="${t('button_detail')}">
+                <a href="${productData.permalinks[CURRENT_LANG]}" class="btn btn-details" aria-label="${t('button_detail')}">
                     ${t('button_detail')}
                 </a>
                 <a href="#!" class="btn btn-card remove-from-cart" data-id="${cartItem.id}" aria-label="${t('button_remove')}">
@@ -217,8 +222,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (qtyInput) {
                 const itemTotalElement = qtyInput.closest('.item-details').querySelector('.item-total-price')
                 if (itemTotalElement) {
-                    const itemTotal = parseFloat(productData.price) * newQty
-                    itemTotalElement.textContent = `${itemTotal.toFixed(2)} €`
+                    const itemTotal = productData.price * newQty
+                    itemTotalElement.textContent = `${formatPrice(itemTotal)} €`
                 }
             }
         }
@@ -291,9 +296,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function updateTicket(subtotal, shippingCost, total) {
-        subtotalElement.textContent = `${subtotal.toFixed(2)} €`
-        shippingElement.textContent = `${shippingCost.toFixed(2)} €`
-        totalElement.textContent = `${total.toFixed(2)} €`
+        subtotalElement.textContent = `${formatPrice(subtotal)} €`
+        shippingElement.textContent = `${formatPrice(shippingCost)} €`
+        totalElement.textContent = `${formatPrice(total)} €`
     }
 
     function getActiveLanguage() {
@@ -317,7 +322,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     function setSelectedCountry() {
         const countryIso = storage.getCountry()
         const options = shippingSelect.options
-    
         for (let i = 0; i < options.length; i++) {
             const option = options[i];
             if (option.getAttribute('data-iso') === countryIso) {
@@ -328,7 +332,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
 
-    function checkoutButtonEventListener(currentLang) {
+    function checkoutButtonEventListener() {
         checkoutButton.addEventListener('click', async (event) => {
             event.preventDefault()
             fullscreenLoader.classList.add('loader-visible')
@@ -343,7 +347,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     },
                     body: JSON.stringify({
                         cartItems: cartData,
-                        currentLang: currentLang,
+                        currentLang: CURRENT_LANG,
                         shippingAmount: totalShippingCost,
                         country: storage.getCountry()
                      }),

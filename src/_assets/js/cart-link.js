@@ -1,7 +1,7 @@
 const storage = {
-    getCart: () => JSON.parse(localStorage.getItem('cart') || '[]'),
+    getCart: () => JSON.parse(localStorage.getItem('shop11ty_cart') || '[]'),
     setCart: (cart) => {
-        localStorage.setItem('cart', JSON.stringify(cart))
+        localStorage.setItem('shop11ty_cart', JSON.stringify(cart))
         updateCartBadge()
     }
 }

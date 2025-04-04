@@ -64,6 +64,11 @@ export default function (eleventyConfig) {
         return `/${lang}${path}`;
     });
 
+    eleventyConfig.addFilter("formatPrice", (price, lang) => {
+        const priceFixed = parseFloat(price).toFixed(2)
+        return (lang === "fr") ? priceFixed.replace('.', ',') : priceFixed
+    });
+
     eleventyConfig.addFilter("sortCountries", (countries, lang) => {
         return countries.sort((a, b) => {
             return a[lang].localeCompare(b[lang]);
@@ -134,25 +139,6 @@ export default function (eleventyConfig) {
             decoding: 'async',
         };
     
-        return Image.generateHTML(metadata, imageAttributes);
-    });
-
-    eleventyConfig.addNunjucksAsyncShortcode('logo', async (src, alt, sizes) => {
-
-        let metadata = await Image(`src/_assets/icons/${src}`, {
-            widths: [128, 80],
-            formats: ['svg'],
-            outputDir: './dist/img/',
-            urlPath: '/img/',
-          })
-
-        let imageAttributes = {
-            alt,
-            sizes,
-            loading: 'lazy',
-            decoding: 'async',
-        };
-
         return Image.generateHTML(metadata, imageAttributes);
     });
 }
