@@ -337,7 +337,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             event.preventDefault()
             fullscreenLoader.classList.add('loader-visible')
 
-            const cartData = JSON.parse(localStorage.getItem('cart')) || []
+            const cartData = JSON.parse(storage.getCart()) || []
+            console.log("cartData", cartData)
 
             try {
                 const response = await fetch('/.netlify/functions/create-checkout-session', {
