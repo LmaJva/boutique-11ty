@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     storage.getCountry = () => localStorage.getItem('shop11ty_country') || 'FR',
-    storage.setCountry = (country) => {
+        storage.setCountry = (country) => {
             localStorage.setItem('shop11ty_country', country)
         }
 
@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                         }
                     }
                     shippingGroups[productData.shipping_type].totalPoints += productData.shipping_point * cartItem.qty
-                    shippingGroups[productData.shipping_type].totalWeight += parseFloat(productData.weight) * cartItem.qty
+                    shippingGroups[productData.shipping_type].totalWeight += parseFloat(productData.weight || 0) * cartItem.qty
                 }
             }
         })
@@ -336,28 +336,28 @@ document.addEventListener('DOMContentLoaded', async () => {
         checkoutButton.addEventListener('click', async (event) => {
             event.preventDefault()
             fullscreenLoader.classList.add('loader-visible')
-  
+
             const cartData = JSON.parse(localStorage.getItem('cart')) || []
-        
+
             try {
                 const response = await fetch('/.netlify/functions/create-checkout-session', {
                     method: 'POST',
                     headers: {
-                    'Content-Type': 'application/json',
+                        'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
                         cartItems: cartData,
                         currentLang: CURRENT_LANG,
                         shippingAmount: totalShippingCost,
                         country: storage.getCountry()
-                     }),
+                    }),
                 })
-            
+
                 const { sessionId } = await response.json()
-            
+
                 const stripe = Stripe(settings.STRIPE_PUBLIC_KEY)
                 await stripe.redirectToCheckout({ sessionId })
-            
+
             } catch (err) {
                 console.error('Erreur lors de la création de la session de paiement :', err)
             }
