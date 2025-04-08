@@ -1,5 +1,7 @@
 ---
 layout: _layouts/default.njk
+eleventyComputed:
+    title: '{{ product.name[page.lang] | safe }}'
 ---
 
 {% set js %}

@@ -3,7 +3,7 @@ import Stripe from 'stripe'
 const stripeClient = new Stripe(process.env.STRIPE_SECRET_KEY)
 
 async function getProducts() {
-  const response = await fetch(`${process.env.DATA_URL}/products.json`)
+  const response = await fetch(`${process.env.DATA_URL}products.json`)
   if (!response.ok) {
     throw new Error('Network response was not ok')
   }
@@ -35,13 +35,12 @@ export async function handler(event) {
       if (!product) {
         throw new Error(`Produit avec ID ${item.id} non trouvé.`)
       }
-
       return {
         price_data: {
           currency: 'eur',
           product_data: {
-            name: `${product.title[currentLang]} - ${item.id}`,
-            description: product.descr[currentLang] || '',
+            name: `${product.name[currentLang]} - ${item.id}`,
+            description: product.mini_descr[currentLang] || '',
           },
           unit_amount: Math.round(product.price * 100),
         },
@@ -63,7 +62,7 @@ export async function handler(event) {
           shipping_rate_data: {
             type: 'fixed_amount',
             fixed_amount: {
-              amount: Math.round(shippingAmount*100),
+              amount: Math.round(shippingAmount * 100),
               currency: 'eur',
             },
             display_name: 'Livraison Standard',

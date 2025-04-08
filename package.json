@@ -26,7 +26,6 @@
         "@splidejs/splide": "^4.1.4",
         "clean-css": "^5.3.3",
         "dotenv": "^16.4.7",
-        "netlify-cli": "^17.38.0",
         "normalize.css": "^8.0.1",
         "stripe": "^17.4.0",
         "terser": "^5.37.0",
@@ -34,6 +33,7 @@
         "update": "^0.4.2"
     },
     "devDependencies": {
+        "netlify-cli": "^17.38.1",
         "js-yaml": "^4.1.0",
         "sharp": "^0.33.5"
     }
