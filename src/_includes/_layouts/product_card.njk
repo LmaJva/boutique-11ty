@@ -42,7 +42,7 @@ eleventyComputed:
                 <h2 class="card-title">{{ product.mini_descr[page.lang] }}</h2>
             </header>
             <section class="card-description">
-                <p>{{ product.description[page.lang] | safe }}</p>
+                <p>{{ product.description[page.lang] | markdownify | safe }}</p>
                 <dl>
                     {% for key, value in product.options[page.lang] %}
                     <dt>

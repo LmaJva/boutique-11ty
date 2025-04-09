@@ -5,6 +5,7 @@ import CleanCSS from "clean-css";
 import { minify } from "terser";
 import { eleventyImageOnRequestDuringServePlugin } from "@11ty/eleventy-img";
 import path from 'path';
+import markdownIt from 'markdown-it';
 
 async function getProducts() {
     const productsModule = await import("./src/_data/products.mjs");
@@ -31,7 +32,7 @@ export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ 'src/_headers': '/_headers' });
 
     eleventyConfig.addPlugin(eleventyImageOnRequestDuringServePlugin);
-    
+
     eleventyConfig.addPlugin(EleventyI18nPlugin, {
         defaultLanguage: 'fr',
         errorMode: 'never'
@@ -41,11 +42,17 @@ export default function (eleventyConfig) {
         yaml.load(contents)
     );
 
-    eleventyConfig.addFilter("excerptFromDescription", function(description) {
+    eleventyConfig.addFilter("excerptFromDescription", function (description) {
         if (!description) return "";
         const separator = "<!--more-->";
         const parts = description.split(separator);
         return parts[0];
+    });
+
+    eleventyConfig.addFilter("markdownify", (content) => {
+        const md = new markdownIt({ html: true });
+        if (!content) return "";
+        return md.renderInline(content);
     });
 
     eleventyConfig.addFilter('customLocaleUrl', function (path, lang) {
@@ -82,34 +89,34 @@ export default function (eleventyConfig) {
     });
 
     eleventyConfig.addFilter("cssmin", function (code) {
-		return new CleanCSS({}).minify(code).styles;
-	});
+        return new CleanCSS({}).minify(code).styles;
+    });
 
     eleventyConfig.addNunjucksAsyncFilter("jsmin", async (code, callback) => {
         try {
-          const minified = await minify(code);
-          return callback(null, minified.code);
+            const minified = await minify(code);
+            return callback(null, minified.code);
         } catch (err) {
-          console.error("Error during terser minify:", err);
-          return callback(err, code);
+            console.error("Error during terser minify:", err);
+            return callback(err, code);
         }
-      });
+    });
 
     eleventyConfig.addCollection("products", async function () {
         const data = await getProducts();
         return data;
     });
-    
+
     (async function generateTagCollections() {
         const data = await getProducts();
-    
+
         const uniqueTags = new Set();
         data.forEach(product => {
             if (product.tags) {
                 product.tags.forEach(tag => uniqueTags.add(tag));
             }
         });
-    
+
         uniqueTags.forEach(tag => {
             eleventyConfig.addCollection(tag, () => {
                 return data.filter(product => product.tags && product.tags.includes(tag));
@@ -130,7 +137,7 @@ export default function (eleventyConfig) {
                 return `${name}-${width}w.${format}`;
             }
         });
-    
+
         let imageAttributes = {
             class: cls,
             alt,
@@ -138,7 +145,7 @@ export default function (eleventyConfig) {
             loading: 'lazy',
             decoding: 'async',
         };
-    
+
         return Image.generateHTML(metadata, imageAttributes);
     });
 }
