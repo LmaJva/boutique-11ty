@@ -27,10 +27,6 @@
     text-align: right;
 }
 
-#cart-content .item-image {
-    filter: grayscale(0.7);
-}
-
 #cart-ticket .cart-ticket-title {
     margin: 0;
     font-weight: bold;
