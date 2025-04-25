@@ -79,6 +79,9 @@ export async function handler(event) {
           },
         },
       ],
+      phone_number_collection: {
+        enabled: true,
+      },
     })
 
     return {
