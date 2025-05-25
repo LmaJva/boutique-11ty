@@ -58,7 +58,11 @@ eleventyComputed:
                 {% set price = product.price %}
                 {% set stock = product.stock %}
                 {% include 'price_stock.njk' %}
-                {% include 'button_add.njk' %}
+                {% if product.stock > 0 %}
+                    {% include 'button_add.njk' %}
+                {% else %}
+                    {% include 'button_selled.njk' %}
+                {% endif %}
             </footer>
         </div>
     </article>
