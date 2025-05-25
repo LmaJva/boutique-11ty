@@ -29,7 +29,7 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     scroll-behavior: smooth;
-    padding: 0 5rem;
+    padding: 0;
 }
 
 h1,
@@ -141,6 +141,7 @@ select:focus {
 @media (min-width: 769px) {
     body {
         max-width: 95em;
+        padding: 0 5rem;
     }
 
     h1,
